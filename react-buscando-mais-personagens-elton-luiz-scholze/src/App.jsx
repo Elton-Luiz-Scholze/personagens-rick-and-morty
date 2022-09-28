@@ -14,7 +14,9 @@ function App() {
   }, [currentPage]);
 
   function previousPage() {
-    setCurrentPage(currentPage - 1);
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   }
   function nextPage() {
     setCurrentPage(currentPage + 1);
@@ -22,9 +24,11 @@ function App() {
 
   return (
     <div className="App">
-      <Character characterList={characterList} />
-      <button onClick={previousPage}>Previous</button>
-      <button onClick={nextPage}>Next</button>
+      <Character
+        characterList={characterList}
+        previousPage={previousPage}
+        nextPage={nextPage}
+      />
     </div>
   );
 }

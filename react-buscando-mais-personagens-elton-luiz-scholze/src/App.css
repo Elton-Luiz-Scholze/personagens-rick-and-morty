@@ -1,3 +1,15 @@
+body {
+  max-width: 100vw;
+  height: 100vh;
+  background-color: #e3e9ec;
+}
 .App {
-  text-align: center;
+  margin: 95px 0 0 0;
+  padding-top: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: #e3e9ec;
 }
