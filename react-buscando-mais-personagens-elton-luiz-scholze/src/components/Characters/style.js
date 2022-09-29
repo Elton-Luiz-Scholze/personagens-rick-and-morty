@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "animate.css";
 
 export const Img = styled.img`
   position: fixed;
@@ -19,6 +20,7 @@ export const Header = styled.header`
   height: 100px;
   background-color: #e3e9ec;
   box-shadow: 0px 3px 4px 0px;
+  animation: fadeInDownBig 1s;
 
   h1 {
     font-size: 1.5rem;
@@ -33,6 +35,7 @@ export const Main = styled.main`
   margin: 0 auto;
   width: 80%;
   gap: 16px;
+  animation: fadeInDownBig 1s;
 `;
 
 export const DivButtons = styled.div`
@@ -44,6 +47,7 @@ export const DivButtons = styled.div`
   gap: 16px;
   padding: 16px;
   transition: 1s;
+  animation: fadeInDownBig 1s;
 `;
 
 export const Button = styled.button`

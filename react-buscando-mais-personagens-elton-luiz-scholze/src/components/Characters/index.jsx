@@ -1,15 +1,29 @@
-import { useState } from "react";
 import { CharCard } from "../CharCard";
 import "./style.js";
 import { Header, Main, DivButtons, Button } from "./style.js";
 
-export function Character({ characterList, previousPage, nextPage }) {
-  const [filter, setFilter] = useState([]);
-
+export function Character({
+  characterList,
+  previousPage,
+  nextPage,
+  filter,
+  setFilter,
+}) {
   const characterFiltered = characterList.filter((character) =>
-    filter === "" ? characterList : character.status === filter
+    filter === "" ? true : character.status === filter
   );
 
+  function renderMain(characters) {
+    return characters.map(({ id, name, image, status, species }) => (
+      <CharCard
+        key={id}
+        name={name}
+        image={image}
+        status={status}
+        species={species}
+      />
+    ));
+  }
   return (
     <>
       <Header>
@@ -22,15 +36,9 @@ export function Character({ characterList, previousPage, nextPage }) {
         </DivButtons>
       </Header>
       <Main>
-        {characterFiltered.map(({ id, name, image, status, species }) => (
-          <CharCard
-            key={id}
-            name={name}
-            image={image}
-            status={status}
-            species={species}
-          />
-        ))}
+        {characterFiltered.length > 0
+          ? renderMain(characterFiltered)
+          : renderMain(characterList)}
       </Main>
       <DivButtons>
         <Button onClick={previousPage}>Previous</Button>
