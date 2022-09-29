@@ -3,8 +3,8 @@ import { Character } from "./components/Characters";
 import "./App.css";
 
 function App() {
-  const [characterList, setCharacterList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [characterList, setCharacterList] = useState([]);
 
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)

@@ -6,7 +6,7 @@ export const Div = styled.div`
   align-items: center;
   margin: 0 auto;
   width: 220px;
-  height: 250px;
+  height: max-content;
   border-radius: 8px;
   background-color: ${(props) => props.background};
   border: 2px transparent solid;
@@ -25,6 +25,8 @@ export const Div = styled.div`
   }
 
   p {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 0.3rem;
   }
 `;

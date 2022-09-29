@@ -7,12 +7,13 @@ export function Character({ characterList, previousPage, nextPage }) {
   const [filter, setFilter] = useState([]);
 
   const characterFiltered = characterList.filter((character) =>
-    filter === "" ? true : character.status === filter
+    filter === "" ? characterList : character.status === filter
   );
+
   return (
     <>
       <Header>
-        <h1>Personagens Rick e Morty</h1>
+        <h1>Rick and Morty - Characters</h1>
         <DivButtons>
           <Button onClick={() => setFilter("")}>All</Button>
           <Button onClick={() => setFilter("Alive")}>Alive</Button>
@@ -21,8 +22,14 @@ export function Character({ characterList, previousPage, nextPage }) {
         </DivButtons>
       </Header>
       <Main>
-        {characterFiltered.map(({ id, name, image, status }) => (
-          <CharCard key={id} name={name} image={image} status={status} />
+        {characterFiltered.map(({ id, name, image, status, species }) => (
+          <CharCard
+            key={id}
+            name={name}
+            image={image}
+            status={status}
+            species={species}
+          />
         ))}
       </Main>
       <DivButtons>
