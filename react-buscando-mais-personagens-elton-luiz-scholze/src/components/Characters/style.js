@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Img = styled.img`
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+`;
+
 export const Header = styled.header`
   position: fixed;
   top: 0;
