@@ -5,6 +5,9 @@ import "./App.css";
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [characterList, setCharacterList] = useState([]);
+  const [filter, setFilter] = useState([]);
+
+  window.scrollTo(0, 0);
 
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
@@ -28,6 +31,8 @@ function App() {
         characterList={characterList}
         previousPage={previousPage}
         nextPage={nextPage}
+        filter={filter}
+        setFilter={setFilter}
       />
     </div>
   );
